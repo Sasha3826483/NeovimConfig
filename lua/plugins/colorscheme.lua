@@ -1,3 +1,4 @@
+-- colorscheme.lua: задаёт тему catppuccin (flavour "mocha") и интегрирует её с lualine
 return {
     {
     "catppuccin/nvim",  -- тема оформления catppuccin

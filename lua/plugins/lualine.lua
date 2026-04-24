@@ -1,3 +1,4 @@
+-- lualine.lua: статус‑строка lualine.nvim, использующая текущий colorscheme и иконки
 return {
     {
     "nvim-lualine/lualine.nvim",  -- статус‑строка и информация о редакторе

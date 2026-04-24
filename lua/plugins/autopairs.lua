@@ -1,3 +1,4 @@
+-- autopairs.lua: подключает nvim-autopairs (автозакрытие скобок) с поддержкой treesitter
 return {
   {
     "windwp/nvim-autopairs",  -- плагин для автоматической вставки парных скобок и т.п.

@@ -1,3 +1,4 @@
+-- options.lua: задаёт глобальные опции Neovim (UI, отступы, поиск, clipboard и пр.)
 local opt = vim.opt  -- ссылка на объект настроек Neovim
 
 -- UI

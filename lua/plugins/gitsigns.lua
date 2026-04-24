@@ -1,3 +1,4 @@
+-- gitsigns.lua: отображает изменения Git в гутере и предоставляет keymaps для навигации и действий над hunks
 return {
   "lewis6991/gitsigns.nvim",  -- отображение гит‑изменений в виде знаков в гутере
   config = function()

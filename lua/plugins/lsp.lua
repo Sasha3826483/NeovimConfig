@@ -1,3 +1,4 @@
+-- lsp.lua: конфигурирует nvim-lspconfig и подключает базовые LSP‑серверы (clangd, pyright, bashls)
 return {
   {
     "neovim/nvim-lspconfig",  -- конфигурация LSP для Neovim

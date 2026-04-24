@@ -1,3 +1,4 @@
+-- treesitter.lua: подключает nvim-treesitter, устанавливает набор парсеров и запускает автостарт
 return {
   {
     "nvim-treesitter/nvim-treesitter",  -- улучшенный синтаксический анализ и подсветка

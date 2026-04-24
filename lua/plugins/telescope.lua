@@ -1,3 +1,4 @@
+-- telescope.lua: конфигурирует nvim-telescope (поиск файлов, live grep, буферы, help)
 return {
   "nvim-telescope/telescope.nvim",  -- мощный поиск файлов и многое другое
   dependencies = {
