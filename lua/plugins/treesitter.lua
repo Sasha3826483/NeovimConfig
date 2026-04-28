@@ -7,33 +7,44 @@ return {
 
     event = { "BufReadPost", "BufNewFile" },  -- загружать при открытии буфера
 
-    config = function()
-      local ts = require("nvim-treesitter")
+    -- config = function()
+    --   local ts = require("nvim-treesitter")
+    --
+    --   local parsers = {
+    --     "lua",
+    --     "vim",
+    --     "vimdoc",
+    --     "python",
+    --     "bash",
+    --     "json",
+    --     "html",
+    --     "css",
+    --     "javascript",
+    --     "typescript",
+    --     "c",
+    --     "cpp",
+    --     "asm"
+    --   }
+    --
+    --   -- установить нужные парсеры
+    --   ts.install(parsers, { summary = true })
+    --
+    --   автостарт Treesitter при открытии файлов поддерживаемых типов
+    --   vim.api.nvim_create_autocmd("FileType", {
+    --     callback = function(args)
+    --       pcall(vim.treesitter.start, args.buf)
+    --     end,
+    --   })
 
-      local parsers = {
-        "lua",
-        "vim",
-        "vimdoc",
-        "python",
-        "bash",
-        "json",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "c",
-        "cpp",
-      }
-
-      -- установить нужные парсеры
-      ts.install(parsers, { summary = true })
-
-      -- автостарт Treesitter при открытии файлов поддерживаемых типов
-      vim.api.nvim_create_autocmd("FileType", {
-        callback = function(args)
-          pcall(vim.treesitter.start, args.buf)
-        end,
-      })
-    end,
+      opts = {  -- просто таблица с настройками!
+      ensure_installed = {
+        "lua", "vim", "vimdoc", "python", "bash", "json", "html", "css",
+        "javascript", "typescript", "c", "cpp"
+      },
+      sync_install = false,
+      auto_install = true,
+      highlight = { enable = true },
+      indent = { enable = true },
+    },
   },
 }
