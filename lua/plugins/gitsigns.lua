@@ -2,7 +2,17 @@
 return {
   "lewis6991/gitsigns.nvim",  -- отображение гит‑изменений в виде знаков в гутере
   config = function()
-    require("gitsigns").setup()  -- использовать настройки по умолчанию
+    require("gitsigns").setup({
+
+        signs = {
+        add          = { text = "+" },
+        change       = { text = "~" },
+        delete       = { text = "-" },
+        topdelete    = { text = "‾" },
+        changedelete = { text = "~" },
+        },
+
+    })
 
     -- Навигация между изменениям (hunks)
     vim.keymap.set("n", "]c", function()
