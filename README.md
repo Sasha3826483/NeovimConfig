@@ -25,3 +25,34 @@
 │       └── web-devicons.lua# nvim-web-devicons – иконки файлов (lazy‑загрузка)
 └── README.md                # Текущий файл (содержит описание структуры)
 ```
+
+## Завимисости, которые нужно скачивать ручками
+
+LSP-серверы:
+
+- clangd (apt)
+- pyright (npm)
+- bash-language-server (npm)
+
+Форматтеры:
+
+- ClangFormat
+- shfmt
+- black
+
+Telescope:
+
+- ripgrep (apt)
+- fd-find (apt)
+
+GIT:
+
+- git (apt)
+
+Для связи буфера терминала и системного буфера (clipboard):
+
+- wl-clipboard
+
+Для установки форматтера python **black** (apt):
+
+- pipx

@@ -28,3 +28,5 @@ opt.splitright = true  -- новые вертикальные сплиты от�
 opt.splitbelow = true  -- новые горизонтальные сплиты открывать ниже текущего окна
 
 opt.termguicolors = true  -- включить поддержку 24‑bit цветов в терминале
+
+opt.fileencodings = { "utf-8", "cp1251", "koi8-r", "cp866" } -- кодировки

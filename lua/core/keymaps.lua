@@ -15,3 +15,13 @@ keymap.set("n", "<leader>k", "<C-w>k")  -- переместить курсор �
 
 -- Очистка поиска
 keymap.set("n", "<leader>nh", ":nohl<CR>")  -- очистить подсветку последнего поиска
+
+-- Форматирование файла
+keymap.set("n", "<leader>f", function()
+  local ok, conform = pcall(require, "conform")
+  if ok then
+    conform.format({ async = true, lsp_fallback = true })
+  else
+    vim.notify("Conform not loaded", vim.log.levels.WARN)
+  end
+end, { desc = "Format file" })
