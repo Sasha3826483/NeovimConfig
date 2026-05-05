@@ -36,9 +36,9 @@ LSP-серверы:
 
 Форматтеры:
 
-- ClangFormat
-- shfmt
-- black
+- clang-format (apt)
+- shfmt (apt)
+- black (pipx)
 
 Telescope:
 
@@ -48,6 +48,10 @@ Telescope:
 GIT:
 
 - git (apt)
+
+Treesitter:
+
+- tree-sitter-cli (npm)
 
 Для связи буфера терминала и системного буфера (clipboard):
 
