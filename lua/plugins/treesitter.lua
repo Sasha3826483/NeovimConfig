@@ -1,50 +1,41 @@
--- treesitter.lua: подключает nvim-treesitter, устанавливает набор парсеров и запускает автостарт
 return {
   {
-    "nvim-treesitter/nvim-treesitter",  -- улучшенный синтаксический анализ и подсветка
-    branch = "main",
-    build = ":TSUpdate",  -- автоматически обновлять парсеры после установки/обновления
+    "nvim-treesitter/nvim-treesitter", -- плагин Treesitter для синтаксического анализа
 
-    event = { "BufReadPost", "BufNewFile" },  -- загружать при открытии буфера
+    branch = "main", -- использовать новую ветку с новым API
 
-    -- config = function()
-    --   local ts = require("nvim-treesitter")
-    --
-    --   local parsers = {
-    --     "lua",
-    --     "vim",
-    --     "vimdoc",
-    --     "python",
-    --     "bash",
-    --     "json",
-    --     "html",
-    --     "css",
-    --     "javascript",
-    --     "typescript",
-    --     "c",
-    --     "cpp",
-    --     "asm"
-    --   }
-    --
-    --   -- установить нужные парсеры
-    --   ts.install(parsers, { summary = true })
-    --
-    --   автостарт Treesitter при открытии файлов поддерживаемых типов
-    --   vim.api.nvim_create_autocmd("FileType", {
-    --     callback = function(args)
-    --       pcall(vim.treesitter.start, args.buf)
-    --     end,
-    --   })
+    build = ":TSUpdate", -- после установки/обновления обновлять парсеры
 
-      opts = {  -- просто таблица с настройками!
-      ensure_installed = {
-        "lua", "vim", "vimdoc", "python", "bash", "json", "html", "css",
-        "javascript", "typescript", "c", "cpp"
-      },
-      sync_install = false,
-      auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
-    },
+    event = { "BufReadPost", "BufNewFile" }, -- загружать плагин при открытии файла
+
+    config = function()
+      -- подключаем основной модуль nvim-treesitter
+      local ts = require("nvim-treesitter")
+
+      -- устанавливаем парсеры для нужных языков
+      ts.install({
+        "lua",
+        "vim",
+        "vimdoc",
+        "python",
+        "bash",
+        "json",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "c",
+        "cpp",
+      })
+
+      -- при определении типа файла запускать Treesitter
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          -- запускаем Treesitter для текущего буфера
+          -- pcall защищает от ошибок, если парсер отсутствует
+          pcall(vim.treesitter.start)
+        end,
+      })
+    end,
   },
 }
