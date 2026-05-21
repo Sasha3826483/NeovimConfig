@@ -17,6 +17,16 @@ return {
       vim.lsp.config("pyright", { capabilities = capabilities })  -- Python
       vim.lsp.config("bashls", { capabilities = capabilities })  -- Bash
 
+      -- Специфичные настройки для bashls
+      vim.lsp.config("bashls", {
+        settings = {
+          bashIde = {
+            shellcheckPath = "shellcheck",   -- явно указываем путь
+            shellcheckArguments = { "--external-sources" },
+          },
+        },
+      })
+
       -- включить LSP‑серверы
       vim.lsp.enable("clangd")
       vim.lsp.enable("pyright")

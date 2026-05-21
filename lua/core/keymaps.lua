@@ -25,3 +25,11 @@ keymap.set("n", "<leader>f", function()
     vim.notify("Conform not loaded", vim.log.levels.WARN)
   end
 end, { desc = "Format file" })
+
+-- Внутри on_attach функции
+local opts = { noremap = true, silent = true, buffer = bufnr }
+
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)     -- показать ошибку
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)            -- предыдущая
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)            -- следующая
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)    -- список ошибок
