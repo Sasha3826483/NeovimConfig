@@ -30,3 +30,8 @@ opt.splitbelow = true  -- новые горизонтальные сплиты �
 opt.termguicolors = true  -- включить поддержку 24‑bit цветов в терминале
 
 opt.fileencodings = { "utf-8", "cp1251", "koi8-r", "cp866" } -- кодировки
+
+vim.opt.foldenable = true
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
